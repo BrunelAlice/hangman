@@ -1,11 +1,11 @@
 function Menu()
 {
     return (
-        <div class="menu">
-            <div class="helpButton">
+        <div className="menu">
+            <div className="helpButton">
                 Help
             </div>
-            <div class="restartButton">
+            <div className="restartButton">
                 Restart
             </div>
         </div>

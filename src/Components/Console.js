@@ -5,7 +5,7 @@ import Screen from "./Screen";
 function Console()
 {
     return (
-        <div class="consoleFrame">
+        <div className="consoleFrame">
             <Menu />
             <Screen />
             <Keyboard />

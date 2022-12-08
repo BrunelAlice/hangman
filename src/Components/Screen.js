@@ -4,14 +4,14 @@ function Screen()
     const wordArray = [...word];
 
     const letter = wordArray.map((letter, index) =>
-        <div key={letter.index} className="theWord">
+        <div key={index} className="theWord" onClick={ (event) => console.log(this.event.target.innerHTML) }>
             {letter}
         </div>
     );
 
     return (
-        <div class="screen">
-            <div class="screenText">
+        <div className="screen">
+            <div className="screenText">
                 {letter}
             </div>
         </div>
