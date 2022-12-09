@@ -19,8 +19,6 @@ function Keyboard()
         
     }
 
-
-
     const keys = letters.map((key, index) => 
         <div className="keys" key={index} onClick={ handleClick }>
             { key }

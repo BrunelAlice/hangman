@@ -1,21 +1,52 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const word = "test";
+
 const initialState = {
-    value: "thermostatic",
+    value: word,
     isFound: false,
+    valueCopy: word,
+    counter: 11,
+    lettersToFind: word.length,
+    finalMessage: "",
 };
 
 export const wordSlice = createSlice({
     name: 'word',
     initialState,
     reducers: {
-        win: (state) =>
+        typedLetter: (state, action) =>
         {
-            console.log(state);
+            const array = [...state.valueCopy];
+            let found = false;
+
+            for (let i = 0; i < array.length; i++)
+            {
+                if (array[i] === action.payload)
+                {
+                    array[i] = "_";
+                    state.lettersToFind--;
+                    found = true;
+                }
+            }
+
+            if (!found && state.counter !== 0)
+            {
+                state.counter--;
+            }
+            console.log("counter " + state.counter);
+            console.log("remaining letters " + state.lettersToFind);
+            state.valueCopy = array.join('');
         },
-        loose: (state) =>
+        message: (state) =>
         {
-            console.log(state);
+            if (state.counter === 0)
+            {
+                state.finalMessage = "You lost";
+            } else if (state.lettersToFind === 0)
+            {
+                state.finalMessage = "You won!";
+            }
         },
         restart: (state) =>
         {
@@ -25,6 +56,6 @@ export const wordSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { win, loose, restart } = wordSlice.actions;
+export const { typedLetter, message, restart } = wordSlice.actions;
 
 export default wordSlice.reducer;
