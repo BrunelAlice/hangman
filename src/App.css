@@ -114,6 +114,10 @@ body {
     font-size: 3.5vw;
 }
 
+.hiddenLetter {
+    display: none;
+}
+
 /** ----- KEYBOARD **/
 .keyboard {
     width: 80%;
