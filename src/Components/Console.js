@@ -1,14 +1,12 @@
-import Keyboard from "./Keyboard";
 import Menu from "./Menu";
-import Screen from "./Screen";
+import Game from "./Game";
 
 function Console()
 {
     return (
         <div className="consoleFrame">
             <Menu />
-            <Screen />
-            <Keyboard />
+            <Game />
         </div>
     );
 }

@@ -1,6 +1,10 @@
+import { useSelector } from 'react-redux';
+
 function Keyboard()
 {
     const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+    const word = useSelector((state) => state.word.value);
 
     let typed = "";
 
@@ -8,8 +12,14 @@ function Keyboard()
     {
         e.preventDefault();
         typed = e.target.innerHTML;
-        console.log(typed);
+        if (word.includes(typed))
+        {
+            console.log("You found a letter");
+        }
+        
     }
+
+
 
     const keys = letters.map((key, index) => 
         <div className="keys" key={index} onClick={ handleClick }>
