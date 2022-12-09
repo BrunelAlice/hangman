@@ -6,12 +6,6 @@ function Game()
     // SCREEN
     const wordArray = [...word];
 
-    const letter = wordArray.map((letter, index) =>
-        <div key={index} className="theWord">
-            {letter}
-        </div>
-    );
-
     // KEYBOARD
     const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -25,24 +19,25 @@ function Game()
         {
             console.log("You found a letter");
         }
-
     }
-
-    const keys = letters.map((key, index) =>
-        <div className="keys" key={index} onClick={handleClick}>
-            {key}
-        </div>
-    );
 
     return (
         <>
         <div className="screen">
             <div className="screenText">
-                {letter}
+                    {wordArray.map((letter, index) =>
+                        <div key={index} className="theWord">
+                            <div>{letter}</div>
+                        </div>
+                    )}
             </div>
         </div>
         <div className="keyboard">
-            {keys}
+                {letters.map((key, index) =>
+                    <div className="keys" key={index} onClick={handleClick}>
+                        {key}
+                    </div>
+                )}
         </div>
         </>
     );
