@@ -24,6 +24,10 @@ body {
     margin: auto;
 }
 
+.logo {
+    width: 150px;
+}
+
 /** HANGMAN IMAGE **/
 
 .Hangman {
@@ -89,15 +93,19 @@ body {
     color: #FFFFFF;
 }
 
-/** ----- SCREEN **/
-.screen {
-    width: 80%;
-    height: 26%;
-    margin: auto;
-    background: #FFFFFF;
-    border: 2px solid #000000;
-    border-radius: 60px 0px;
-}
+    .restartButton:hover {
+        background: #D0F39F;
+        color: black;
+    }
+    /** ----- SCREEN **/
+    .screen {
+        width: 80%;
+        height: 26%;
+        margin: auto;
+        background: #FFFFFF;
+        border: 2px solid #000000;
+        border-radius: 60px 0px;
+    }
 
 .screenText {
     font-style: normal;

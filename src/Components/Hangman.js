@@ -1,10 +1,13 @@
-import introImg from '../Images/hangman_intro_img.png';
+import { useSelector } from 'react-redux';
 
 function Hangman()
 {
+    const counter = useSelector((state) => state.word.counter);
+    let url = `hangman_${counter}.svg`
+
     return (
         <div>
-            <img src={introImg} alt="Intro Hangman" width="100%"/>
+            <img src={ url } alt="Intro Hangman" width="100%" />
         </div>
     );
 }

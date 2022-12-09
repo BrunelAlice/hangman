@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const word = "test";
+const word = ["quirky", "funny", "vintage", "disco", "nineties", "hangman", "nintendo","macarena"];
 
 const initialState = {
-    value: word,
+    value: word[0],
     isFound: false,
-    valueCopy: word,
+    valueCopy: word[0],
     counter: 11,
     lettersToFind: word.length,
     finalMessage: "",
@@ -50,7 +50,17 @@ export const wordSlice = createSlice({
         },
         restart: (state) =>
         {
-            console.log(state);
+            function getRandomInt(max)
+            {
+                return Math.floor(Math.random() * max);
+            }
+            let newWord = word[getRandomInt(3)];
+            state.value = newWord;
+            state.isFound = false;
+            state.valueCopy = newWord;
+            state.counter = 11;
+            state.lettersToFind = newWord.length;
+            state.finalMessage = "";
         },
     },
 });
