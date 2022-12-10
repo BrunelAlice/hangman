@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { message } from '../Features/gameSlice';
 
+// This component is the screen where the user can see the result of their guess
 function Screen()
 {
     const dispatch = useDispatch();
@@ -13,7 +14,7 @@ function Screen()
     const counter = useSelector((state) => state.game.counter);
     const screenMessage = useSelector((state) => state.game.finalMessage);
 
-    // SCREEN
+
     const wordArray = [...hiddenWord];
 
     const displayWord = wordArray.map((letter, index) =>
@@ -37,8 +38,8 @@ function Screen()
 
     return (
             <div className="screen">
-            <div className="screenText">
-                {counter !== 0 && lettersToFind !== 0 ? displayWord : screenMessage }
+                <div className="screenText">
+                    {counter !== 0 && lettersToFind !== 0 ? displayWord : screenMessage }
                 </div>
             </div>
     );

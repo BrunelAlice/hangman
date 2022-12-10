@@ -11,7 +11,7 @@
 }
 
 p {
-    font-family: Arial;
+    font-family: bd-supper, sans-serif;
 }
 
 body {
@@ -66,9 +66,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 10%;
+    text-align: center;
+    height: 70px;
     width: 38vw;
-    margin: 38px 93px 38px 93px;
+    margin: auto;
+    padding: 26px;
+    gap: 10px;
 }
 
 /** ----- Help **/
@@ -157,6 +160,7 @@ body {
     display: none;
 }
 
+
 /** ----- KEYBOARD **/
 .keyboard {
     width: 80%;
@@ -179,6 +183,7 @@ body {
     font-weight: 400;
     font-size: 3vw;
     line-height: 150%;
+    font-family: bd-supper, sans-serif;
 }
 
     .keys:hover {

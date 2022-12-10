@@ -1,10 +1,13 @@
 import { useDispatch } from 'react-redux';
 import { toggleHelp } from '../Features/gameSlice';
 
+// This component toggles a help window
 function Help()
 {
+    // To be able to use the "toggle help" action, we have to import dispatch
     const dispatch = useDispatch();
 
+    // Return the content of the help window
     return (
         <div className="help">
             <div className="helpButton closing" onClick={() => dispatch(toggleHelp())}>

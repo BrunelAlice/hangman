@@ -1,9 +1,10 @@
 import Keyboard from './Keyboard';
 import Screen from './Screen';
-
-import { useSelector } from 'react-redux';
 import Help from './Help';
 
+import { useSelector } from 'react-redux';
+
+// This component is the game UI with a screen and a keyboard (or a help window when toggled)
 function Game()
 {
     const helpIsOpen = useSelector((state) => state.game.helpIsOpen);
