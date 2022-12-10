@@ -14,7 +14,7 @@ function Menu()
                 Help
             </div>
             <div>
-                Remaining try: { tryLeft }
+                Remaining tries: { tryLeft }
             </div>
             <div className="restartButton" onClick={() => dispatch(restart()) }>
                 Restart

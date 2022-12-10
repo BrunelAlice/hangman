@@ -1,11 +1,12 @@
 import './App.css';
 import Console from './Components/Console';
 import Hangman from './Components/Hangman.js';
+import Logo from './Components/Logo';
 
 function App() {
     return (
     <>
-      <img src="logo.png" alt="Intro Hangman" width="100%" className="logo"/>
+      <Logo />
       <div className="App">
           <div className="Hangman">
             <Hangman />

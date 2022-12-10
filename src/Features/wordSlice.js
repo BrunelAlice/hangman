@@ -9,6 +9,7 @@ const initialState = {
     counter: 11,
     lettersToFind: word.length,
     finalMessage: "",
+    gameIsStarted: false,
 };
 
 export const wordSlice = createSlice({
@@ -17,6 +18,10 @@ export const wordSlice = createSlice({
     reducers: {
         typedLetter: (state, action) =>
         {
+            if (state.gameIsStarted === false)
+            {
+                state.gameIsStarted = true;
+            }
             const array = [...state.valueCopy];
             let found = false;
 
@@ -34,8 +39,6 @@ export const wordSlice = createSlice({
             {
                 state.counter--;
             }
-            console.log("counter " + state.counter);
-            console.log("remaining letters " + state.lettersToFind);
             state.valueCopy = array.join('');
         },
         message: (state) =>
