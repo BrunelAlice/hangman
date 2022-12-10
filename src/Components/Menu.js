@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { restart } from '../Features/wordSlice';
+import { restart } from '../Features/gameSlice';
 
 function Menu()
 {
 
     const dispatch = useDispatch();
-    const tryLeft = useSelector((state) => state.word.counter);
+    const tryLeft = useSelector((state) => state.game.counter);
 
     return (
         <div className="menu">

@@ -2,8 +2,8 @@ import { useSelector } from 'react-redux';
 
 function Image()
 {
-    const counter = useSelector((state) => state.word.counter);
-    const isStarted = useSelector((state) => state.word.gameIsStarted);
+    const counter = useSelector((state) => state.game.counter);
+    const isStarted = useSelector((state) => state.game.gameIsStarted);
 
     let url = `hangman_${counter}.svg`;
 

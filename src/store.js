@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import wordReducer from './Features/wordSlice';
+import gameReducer from './Features/gameSlice';
 
 export const store = configureStore({
     reducer: {
-        word: wordReducer,
+        game: gameReducer,
     },
 });

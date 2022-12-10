@@ -23,8 +23,9 @@ const initialState = {
     gameIsStarted: false,
 };
 
-export const wordSlice = createSlice({
-    name: 'word',
+// Export the game slice with its reducers
+export const gameSlice = createSlice({
+    name: 'gameSlice',
     initialState,
     reducers: {
         typedLetter: (state, action) =>
@@ -76,6 +77,6 @@ export const wordSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { typedLetter, message, restart } = wordSlice.actions;
+export const { typedLetter, message, restart } = gameSlice.actions;
 
-export default wordSlice.reducer;
+export default gameSlice.reducer;

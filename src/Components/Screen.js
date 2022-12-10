@@ -1,17 +1,17 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { message } from '../Features/wordSlice';
+import { message } from '../Features/gameSlice';
 
 function Screen()
 {
     const dispatch = useDispatch();
 
-    const hiddenWord = useSelector((state) => state.word.value);
-    const wordCopy = useSelector((state) => state.word.valueCopy);
-    const lettersToFind = useSelector((state) => state.word.lettersToFind);
-    const counter = useSelector((state) => state.word.counter);
-    const screenMessage = useSelector((state) => state.word.finalMessage);
+    const hiddenWord = useSelector((state) => state.game.value);
+    const wordCopy = useSelector((state) => state.game.valueCopy);
+    const lettersToFind = useSelector((state) => state.game.lettersToFind);
+    const counter = useSelector((state) => state.game.counter);
+    const screenMessage = useSelector((state) => state.game.finalMessage);
 
     // SCREEN
     const wordArray = [...hiddenWord];

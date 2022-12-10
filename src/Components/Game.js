@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { typedLetter } from '../Features/wordSlice';
+import { typedLetter } from '../Features/gameSlice';
 import Screen from './Screen';
 
 function Game()
