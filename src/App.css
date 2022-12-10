@@ -10,6 +10,10 @@
     font-family: 'Giovany';
 }
 
+p {
+    font-family: Arial;
+}
+
 body {
     background-color: #EFE5D9;
     text-align: center;
@@ -63,7 +67,17 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 10%;
+    width: 38vw;
     margin: 38px 93px 38px 93px;
+}
+
+/** ----- Help **/
+.help {
+    margin: 5% 10% 10% 10%;
+    border-style: solid;
+    border-width: 2px;
+    padding: 15px;
+    border-radius: 25px;
 }
 
 .helpButton {
@@ -85,6 +99,16 @@ body {
         cursor: pointer;
     }
 
+.closing {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 22px;
+    font-family: Arial;
+    line-height: 50px;
+}
+
+/** ----- Restart **/
 .restartButton {
     box-sizing: border-box;
     width: 182px;

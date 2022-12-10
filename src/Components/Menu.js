@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { restart } from '../Features/gameSlice';
+import { toggleHelp } from '../Features/gameSlice';
 
 function Menu()
 {
@@ -10,7 +11,7 @@ function Menu()
 
     return (
         <div className="menu">
-            <div className="helpButton">
+            <div className="helpButton" onClick={() => dispatch(toggleHelp())}>
                 Help
             </div>
             <div>

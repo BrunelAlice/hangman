@@ -1,24 +1,17 @@
-import { useDispatch } from 'react-redux';
-import { typedLetter } from '../Features/gameSlice';
+import Keyboard from './Keyboard';
 import Screen from './Screen';
+
+import { useSelector } from 'react-redux';
+import Help from './Help';
 
 function Game()
 {
-    // Create a keyboard
-    const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-    const dispatch = useDispatch();
+    const helpIsOpen = useSelector((state) => state.game.helpIsOpen);
 
      return (
         <>
         <Screen/>
-        <div className="keyboard">
-                {letters.map((key, index) =>
-                    <div className="keys" key={index} onClick={(e) => dispatch(typedLetter(e.target.innerHTML))}>
-                        {key}
-                    </div>
-                )}
-        </div>
+             {helpIsOpen ? <Help /> : <Keyboard /> }
         </>
     );
 }

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 // Create a list of word to use for the game
-const word = ["quirky", "funny", "vintage", "disco", "nineties", "hangman", "nintendo", "macarena"];
+const word = ["funny", "vintage", "disco", "nineties", "hangman", "nintendo", "macarena", "banana"];
 
 // Create a function to pick a random word
 function getRandomInt(max)
@@ -10,7 +10,7 @@ function getRandomInt(max)
 }
 
 // Define the first word that we are going to use
-const randomWord = word[getRandomInt(7)];
+const randomWord = word[getRandomInt(word.length)];
 
 // Define the initial state of the game
 const initialState = {
@@ -21,6 +21,7 @@ const initialState = {
     lettersToFind: randomWord.length,
     finalMessage: "",
     gameIsStarted: false,
+    helpIsOpen: false,
 };
 
 // Export the game slice with its reducers
@@ -73,10 +74,14 @@ export const gameSlice = createSlice({
             state.lettersToFind = newWord.length;
             state.finalMessage = "";
         },
+        toggleHelp: (state) =>
+        {
+            state.helpIsOpen ? state.helpIsOpen = false : state.helpIsOpen = true;
+        },
     },
 });
 
 // Action creators are generated for each case reducer function
-export const { typedLetter, message, restart } = gameSlice.actions;
+export const { typedLetter, message, restart, toggleHelp } = gameSlice.actions;
 
 export default gameSlice.reducer;
