@@ -1,7 +1,7 @@
 import Menu from "./Menu";
 import Game from "./Game";
 
-
+// This component compiles the game console elements
 function Console()
 {
 

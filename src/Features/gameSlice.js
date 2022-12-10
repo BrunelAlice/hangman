@@ -22,6 +22,7 @@ const initialState = {
     finalMessage: "",
     gameIsStarted: false,
     helpIsOpen: false,
+    guesses: [],
 };
 
 // Export the game slice with its reducers
@@ -33,6 +34,8 @@ export const gameSlice = createSlice({
         // This reducer takes a user input (typed guess)
         typedLetter: (state, action) =>
         {
+            // Add to a state of already typed letters
+            state.guesses.push(action.payload);
             // Define if the game is started
             if (state.gameIsStarted === false)
             {
@@ -42,11 +45,13 @@ export const gameSlice = createSlice({
             const array = [...state.valueCopy];
             // Create a variable to check if guess was correct
             let found = false;
-            // Check if the letter correspond and update state
+            // We will use the array to compare with the user guess
             for (let i = 0; i < array.length; i++)
             {
+                // If it corresponds, the states will be updated
                 if (array[i] === action.payload)
                 {
+                    // We mutate the letter to make sure it won't be compared again later
                     array[i] = "_";
                     state.lettersToFind--;
                     found = true;
@@ -57,7 +62,7 @@ export const gameSlice = createSlice({
             {
                 state.counter--;
             }
-            // Recreate the initial value of valueCopy
+            // Rebuild the valueCopy string
             state.valueCopy = array.join('');
         },
         // This reducer is used to display a message in Screen
@@ -83,6 +88,7 @@ export const gameSlice = createSlice({
             state.counter = 11;
             state.lettersToFind = newWord.length;
             state.finalMessage = "";
+            state.guesses = [];
         },
         // This reducer toggles help display
         toggleHelp: (state) =>
