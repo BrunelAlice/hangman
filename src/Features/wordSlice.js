@@ -1,13 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const word = ["quirky", "funny", "vintage", "disco", "nineties", "hangman", "nintendo","macarena"];
+// Create a list of word to use for the game
+const word = ["quirky", "funny", "vintage", "disco", "nineties", "hangman", "nintendo", "macarena"];
 
+// Create a function to pick a random word
+function getRandomInt(max)
+{
+    return Math.floor(Math.random() * max);
+}
+
+// Define the first word that we are going to use
+const randomWord = word[getRandomInt(7)];
+
+// Define the initial state of the game
 const initialState = {
-    value: word[0],
+    value: randomWord,
     isFound: false,
-    valueCopy: word[0],
+    valueCopy: randomWord,
     counter: 11,
-    lettersToFind: word.length,
+    lettersToFind: randomWord.length,
     finalMessage: "",
     gameIsStarted: false,
 };
@@ -53,11 +64,7 @@ export const wordSlice = createSlice({
         },
         restart: (state) =>
         {
-            function getRandomInt(max)
-            {
-                return Math.floor(Math.random() * max);
-            }
-            let newWord = word[getRandomInt(3)];
+            let newWord = word[getRandomInt(7)];
             state.value = newWord;
             state.isFound = false;
             state.valueCopy = newWord;

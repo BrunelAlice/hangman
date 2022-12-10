@@ -79,6 +79,12 @@ body {
     line-height: 60px;
 }
 
+    .helpButton:hover {
+        background: #404682;
+        color: white;
+        cursor: pointer;
+    }
+
 .restartButton {
     box-sizing: border-box;
     width: 182px;
@@ -96,6 +102,7 @@ body {
     .restartButton:hover {
         background: #D0F39F;
         color: black;
+        cursor: pointer;
     }
     /** ----- SCREEN **/
     .screen {
