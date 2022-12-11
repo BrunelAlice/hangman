@@ -22,3 +22,6 @@ Once you have the necessary software installed, follow these steps to install an
 
 Open a web browser and navigate to http://localhost:3000 to view the project.
 
+## Licence
+Copyright law covers all visual assets included in this project  <br />
+Copyright @ 2022 Alice Brunel
